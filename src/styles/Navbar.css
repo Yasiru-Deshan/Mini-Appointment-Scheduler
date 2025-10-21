@@ -10,7 +10,7 @@
 .navbar-content {
   display: flex;
   align-items: center;
-  gap: 15px; /* Adds spacing between the text and button */
+  gap: 15px;
 }
 
 .navbar-content p {

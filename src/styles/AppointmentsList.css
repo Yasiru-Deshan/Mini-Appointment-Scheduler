@@ -34,21 +34,48 @@
   font-weight: bold;
   text-align: center;
   color: white;
-  pointer-events: none; /* Makes it non-clickable */
+  pointer-events: none;
 }
 
 .status-badge.pending {
-  background-color: #007bff; /* Blue for pending */
+  background-color: #007bff;
 }
 
 .status-badge.ongoing {
-  background-color: #ffc107; /* Yellow for ongoing */
+  background-color: #ffc107;
 }
 
 .status-badge.canceled {
-  background-color: #dc3545; /* Red for canceled */
+  background-color: #dc3545;
 }
 
 .status-badge.completed {
-  background-color: #28a745; /* Green for completed */
+  background-color: #28a745;
+}
+
+.edit-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.edit-button:hover {
+  background-color: #218838;
+}
+
+.delete-button {
+  background-color: #dc3545; 
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
 }

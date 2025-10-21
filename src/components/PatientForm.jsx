@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { supabase } from "../supabaseClient";
+import { toast } from "react-toastify";
 import "../styles/PatientForm.css";
 
 export default function PatientForm({ onPatientAdded }) {
@@ -12,12 +13,15 @@ export default function PatientForm({ onPatientAdded }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { error } = await supabase.from("patients").insert([patient]);
-    if (error) alert("Error adding patient!");
-    else {
+    if (error) {
+      toast.error("Error adding patient!");
+    } else {
+      toast.success("Patient added successfully!");
       onPatientAdded();
       setPatient({ name: "", email: "", phone: "" });
     }
   };
+
 
   return (
     <div className="patient-form">
