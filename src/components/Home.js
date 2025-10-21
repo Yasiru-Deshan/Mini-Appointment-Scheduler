@@ -8,13 +8,20 @@ function Home() {
   const [patients, setPatients] = useState([]);
   const [appointments, setAppointments] = useState([]);
 
+  const loadAppointments = async () => {
+    const data = await fetchAppointments();
+    setAppointments(data);
+  }
+
+  const loadPatients = async () => {
+    const data = await fetchPatients();
+    setPatients(data);
+  }
+
   useEffect(() => {
     const loadData = async () => {
-      const patientsData = await fetchPatients();
-      setPatients(patientsData);
-
-      const appointmentsData = await fetchAppointments();
-      setAppointments(appointmentsData);
+      await loadAppointments();
+      await loadPatients();
     };
 
     loadData();
@@ -23,13 +30,16 @@ function Home() {
   return (
     <div className="main-container">
       <div className="forms-container">
-        <PatientForm onPatientAdded={fetchPatients} />
+        <PatientForm onPatientAdded={loadPatients} />
         <AppointmentForm
           patients={patients}
-          onAppointmentAdded={fetchAppointments}
+          onAppointmentAdded={loadAppointments}
         />
       </div>
-      <AppointmentList appointments={appointments} />
+      <AppointmentList
+        appointments={appointments}
+        loadAppointments={loadAppointments}
+      />
     </div>
   );
 }
