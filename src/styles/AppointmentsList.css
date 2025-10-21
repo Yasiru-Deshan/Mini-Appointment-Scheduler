@@ -1,0 +1,54 @@
+.appointment-list {
+  margin-top: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.appointment-list table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.appointment-list th, .appointment-list td {
+  border-bottom: 1px solid #eee;
+  padding: 12px;
+  text-align: left;
+}
+
+.appointment-list th {
+  background-color: #f1f3f5;
+}
+
+.appointment-list tr:hover {
+  background-color: #f8f9fa;
+}
+
+.status-badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  pointer-events: none; /* Makes it non-clickable */
+}
+
+.status-badge.pending {
+  background-color: #007bff; /* Blue for pending */
+}
+
+.status-badge.ongoing {
+  background-color: #ffc107; /* Yellow for ongoing */
+}
+
+.status-badge.canceled {
+  background-color: #dc3545; /* Red for canceled */
+}
+
+.status-badge.completed {
+  background-color: #28a745; /* Green for completed */
+}
